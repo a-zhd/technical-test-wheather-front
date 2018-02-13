@@ -5,95 +5,67 @@
       <title>Архив температуры</title>
       <link rel="stylesheet" href="css/styles.css" />
       <style>
-        .menu-bar {
+        .control-bar {
           padding: 3px;
-          background-color: rgba(12, 197, 197, 0.45);
+          margin-right: 20px;
+          /* background-color: rgba(12, 197, 197, 0.45); */
         }
         .filters-bar {
-          background-color: #e6b1b1;
-          height: 53px;
+            /* bsackground-color: #e6b1b1; */
+            display: inline-table;
+            width: 99%;
+            padding: 3px 0 5px 0;
         }
         .graphic-bar {
-            background-color: #b6b1b1;
+          /* background-color: #83c8e8; */
+          height: 90%;
+          margin: 0 3px 0 0;
+          border: 1px solid lightgrey;
         }
 
         .box {
           display: grid;
         }
 
-        left-rows {
-          grid-template-rows: 1fr;
-        }
-
         .border {
           height: 500px;
-          width: 550px;
-          border: 1px solid black;
+          width: 600px;
+          /* border: 1px solid black; */
           padding: 5px;
           grid-template-columns: 1fr 2fr;
         }
         button {
             width: 100%;
+            border: 1px solid black;
+            background: #a0c370;
             margin-bottom: 5px;
         }
         select {
           width: 50%;
+          background: #a0c370;
+          border: 1px solid black;
         }
 
       </style>
   </head>
   <body>
     <div class="border box">
-      <div class="menu-bar">
-          <button>Температура</button>
+      <div class="control-bar">
+          <button onclick="init()">
+            Температура
+          </button>
           <button>Осадки</button>
       </div>
-      <div class="box left-rows">
+      <div>
         <div class="filters-bar">
-          <select>
-            <option value="all" selected>Все</option>
-            <option value="1">до 1 минуты</option>
-            <option value="3">до 3 минут</option>
-            <option value="5">до 5 минут</option>
-            <option value="10">до 10 минут</option>
-          </select>
-          <select>
-            <option value="all" selected>Все</option>
-            <option value="1">до 1 минуты</option>
-            <option value="3">до 3 минут</option>
-            <option value="5">до 5 минут</option>
-            <option value="10">до 10 минут</option>
-          </select>
+          <select id="select-from"></select>
+          <select id="select-to"></select>
         </div>
         <div class="graphic-bar">
 
         </div>
       </div>
     </div>
-
-
-
-    <!--
-    <section class="column-b">
-        <div>
-          <select>
-            <option value="all" selected>Все</option>
-            <option value="1">до 1 минуты</option>
-            <option value="3">до 3 минут</option>
-            <option value="5">до 5 минут</option>
-            <option value="10">до 10 минут</option>
-          </select>
-          <select>
-            <option value="all" selected>Все</option>
-            <option value="1">до 1 минуты</option>
-            <option value="3">до 3 минут</option>
-            <option value="5">до 5 минут</option>
-            <option value="10">до 10 минут</option>
-          </select>
-        </div>
-        <div>График...</div>
-      </div>
-  </section> -->
     <script src="js/bundle.js"></script>
   </body>
 </html>

@@ -11,19 +11,22 @@ function getToYears() {
 
 function request (url, callback) {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", url, false);
+  xhr.open("GET", url, true);
   xhr.send();
-  if (xhr.status != 200)
-    alert("Error in query");
-  else
-    callback(xhr.responseText);
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200)
+       callback(xhr.responseText);
+    else
+       alert("Error in query");
+
+  }
 }
 
 function init() {
-  // request(BACKEND_URL + "/temperatures", function (resp) {
-  //   // console.log(resp);
-  // });
   request(BACKEND_URL + "/precipitations", function (resp) {
+    console.log(resp);
+  });
+  request(BACKEND_URL + "/temperatures", function (resp) {
     console.log(resp);
   });
 }

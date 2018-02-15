@@ -6,7 +6,7 @@ const FS_PREFIX = "/home/zhdanov/Documents/Projects/tests/bytinkoff/wheather-fro
 const HEADER_TYPE = { 'Content-Type': 'text/plain; charset=utf8' };
 
 const server = http.createServer((req, resp) => {
-  // resp.setHeader('Access-Control-Allow-Origin', '*');
+  resp.setHeader('Access-Control-Allow-Origin', '*');
   const { url } = req;
   try {
     switch (url) {
